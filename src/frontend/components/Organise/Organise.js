@@ -10,6 +10,7 @@ const Organise = () => {
     const [eventDetails, seteventDetails] = useState('');
     const [ticketNumber, setticketNumber] = useState(0);
     const [currentdate, setdate] = useState(null);
+    const [hostAddress, sethostAddress] = useState('');
     const handleSubmit =(e) =>{
         e.preventDefault();
         console.log(imageFile,eventName,eventDetails,ticketNumber,currentdate);
@@ -42,9 +43,11 @@ const Organise = () => {
                     onChange={e=>seteventName(e.target.value)}
                         className='eventNameinput' /></div>
             </div>
-            <div>
+            <div className='dateWrapper'>
                 <div><input type='date' className='dateInput' onChange={e=>{setdate(e.target.value);
                 console.log(currentdate);}}/></div>
+                <div><input className='eventHostAddress' value={hostAddress} onChange={e=>sethostAddress(e.target.value)} type='text' placeholder='Address of the Performer'/></div>
+
             </div>
             <div>
                 <div><textarea type='text' className='eventDetails' value={eventDetails}
@@ -56,6 +59,7 @@ const Organise = () => {
                 onChange={e=>setticketNumber(e.target.value)}/></div>
                 <div><button className='organiseButton' onClick={handleSubmit}>Organise!</button></div>
             </div>
+            
         </div>
     )
 }

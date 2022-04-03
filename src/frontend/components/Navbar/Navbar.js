@@ -1,7 +1,7 @@
 import React from 'react'
 import './Navbar.css'
 import { Link } from "react-router-dom";
-
+import {IoWalletOutline} from 'react-icons/io5'
 const Navbar = ({web3Handler,account}) => {
   return (
     <div className='navBarWrapper'>
@@ -14,7 +14,8 @@ const Navbar = ({web3Handler,account}) => {
         </div>
         <div className='buttonWrapper'>
           {account? (<div className='accountWrapper'>{account.slice(0, 5) + '...' + account.slice(38, 42)}</div>):(
-            <button onClick={(e)=>web3Handler(e)} className='buttonConnect'>Connect to Wallet</button>
+            // <button onClick={(e)=>web3Handler(e)} className='buttonConnect'>Connect to Wallet</button>
+            <div onClick={(e)=>web3Handler(e)} className='buttonConnect'><IoWalletOutline className='iconWallet'/><div>Connect to Wallet </div></div>
           )}
             
         </div>

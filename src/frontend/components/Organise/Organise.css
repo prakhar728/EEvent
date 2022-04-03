@@ -41,6 +41,16 @@
     outline: none;
     border:none;
 }
+.dateWrapper{
+    display: flex;
+    align-items: center;
+    width: 40vw;
+    justify-content: space-between;
+}
+.eventHostAddress{
+    height:44px;
+    outline:none;
+}
 .eventDetails{
         height:20vh;
     width:40vw;
@@ -57,7 +67,7 @@
     text-align: center;
 }
 .organiseButton{
-    padding:5px 16  px;
+    padding:5px 16px;
     background-color: black;
     color:white;
     border-radius: 10px;
