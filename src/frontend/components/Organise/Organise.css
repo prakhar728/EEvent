@@ -1,0 +1,64 @@
+.organiseWrapper{
+    height:75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    padding-left: 30vw;
+}
+.inputAndNameWrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width:40vw;
+    justify-content: space-between;
+}
+.inputImageWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px;
+    height:10vh
+}
+.imageInput{
+    padding:10px;
+    font-size: 20px;
+}
+.imageHolder{
+    margin-right: 4vw;
+}
+.eventNameinput{
+    height:44px;
+    outline:none;
+
+}
+.eventNameinput:focus{
+    outline:none;
+}
+.dateInput{
+    height:10vh;
+    padding: 0 10px;
+    font-size: 24px;
+    outline: none;
+    border:none;
+}
+.eventDetails{
+        height:20vh;
+    width:40vw;
+}
+.organiseAndTicketWrapper{
+    display: flex;
+    justify-content: flex-end   ;
+    align-items: center;
+    column-gap: 30px;
+    width:40vw;
+}
+.ticketNumber{
+    height:5vh;
+    text-align: center;
+}
+.organiseButton{
+    padding:5px 16  px;
+    background-color: black;
+    color:white;
+    border-radius: 10px;
+}
