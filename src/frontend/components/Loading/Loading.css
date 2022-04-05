@@ -1,3 +1,11 @@
+.loadingDiv{
+height:75vh;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+position: absolute;
+}
 .loadingWrapper{
     width:60vw;
     margin:0 auto;
@@ -19,4 +27,9 @@
     font-family: 'Roboto Mono', monospace;
     color: black;
     text-align: center;
+}
+.loadingMessage{
+    font-size: 24px;
+    font-family: 'Roboto Mono', monospace;
+
 }

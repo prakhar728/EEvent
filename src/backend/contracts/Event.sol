@@ -17,6 +17,7 @@ contract Events is ReentrancyGuard{
         uint256 _ticketsSold;
         address payable hostName;
         address payable eventOrganiser;
+        uint256 _ticketPrice;
     }
 
     mapping (uint256 => eventPanel) events;
@@ -32,10 +33,10 @@ contract Events is ReentrancyGuard{
        address indexed _eventOrganiser
     );
 
-    function createEvent(string memory _eventDetails,uint256 _ticketCount,uint256 _ticketsSold,address payable _hostName) external nonReentrant returns(uint)
+    function createEvent(string memory _eventDetails,uint256 _ticketCount,uint256 _ticketsSold,address payable _hostName,uint256 _ticketPrice) external nonReentrant returns(uint)
     {
         _eventId.increment();
-        events[_eventId.current()]=eventPanel(_eventDetails,_ticketCount, _ticketsSold,_hostName,payable(msg.sender));
+        events[_eventId.current()]=eventPanel(_eventDetails,_ticketCount, _ticketsSold,_hostName,payable(msg.sender),_ticketPrice);
         emit created(_eventDetails,_ticketCount,_ticketsSold,_hostName,msg.sender);
         return _eventId.current();
     }
