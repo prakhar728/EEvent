@@ -20,7 +20,7 @@ contract Events is ReentrancyGuard{
         uint256 _ticketPrice;
     }
 
-    mapping (uint256 => eventPanel) events;
+    mapping (uint256 => eventPanel) public events;
     constructor(){
         contractOwner=msg.sender;
     }
@@ -32,7 +32,9 @@ contract Events is ReentrancyGuard{
        address indexed  _hostName,
        address indexed _eventOrganiser
     );
-
+    function currentEventCount() external view returns(uint256){
+        return _eventId.current();
+    }
     function createEvent(string memory _eventDetails,uint256 _ticketCount,uint256 _ticketsSold,address payable _hostName,uint256 _ticketPrice) external nonReentrant returns(uint)
     {
         _eventId.increment();

@@ -47,7 +47,7 @@ function App() {
       <Navbar web3Handler={web3Handler} account={account}/>
       {loading? (<Loading message='Waiting for Wallet Connection' />):(
         <Routes>
-      <Route path="/" element={<Home />}>
+      <Route path="/" element={<Home nftContract={nftContract} eventsContract={eventsContract} />}>
       </Route>
       <Route path="/organise" element={<Organise nftContract={nftContract} eventsContract={eventsContract} />}>
         </Route>
