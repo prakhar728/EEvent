@@ -24,11 +24,19 @@ contract Events is ReentrancyGuard{
         contractOwner=msg.sender;
     }
 
-    
-    function createEvent(string memory _eventDetails,uint256 _ticketCount,uint256 _ticketsSold,address payable _hostName) public nonReentrant returns(uint)
+    event created(
+       string  _eventDetails,
+       uint256 _ticketCount,
+       uint256 _ticketsSold,
+       address indexed  _hostName,
+       address indexed _eventOrganiser
+    );
+
+    function createEvent(string memory _eventDetails,uint256 _ticketCount,uint256 _ticketsSold,address payable _hostName) external nonReentrant returns(uint)
     {
         _eventId.increment();
         events[_eventId.current()]=eventPanel(_eventDetails,_ticketCount, _ticketsSold,_hostName,payable(msg.sender));
+        emit created(_eventDetails,_ticketCount,_ticketsSold,_hostName,msg.sender);
         return _eventId.current();
     }
 }
