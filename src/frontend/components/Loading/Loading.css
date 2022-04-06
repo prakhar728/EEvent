@@ -5,6 +5,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 position: absolute;
+
 }
 .loadingWrapper{
     width:60vw;
@@ -16,7 +17,8 @@ position: absolute;
     justify-content: center;
     row-gap: 4vh;
     box-shadow:2px 3px 5px #999;
-    background-color: rgba(239, 239, 239, 0.772);
+    background-color: rgb(239, 239, 239);
+border-radius: 24px;
 }
 
 .loadingGIF{
